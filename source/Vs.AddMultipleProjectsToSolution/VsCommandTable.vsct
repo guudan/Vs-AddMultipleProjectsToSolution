@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidAddMultipleProjectsCommandPackage">
+    <Groups>
+      <Group guid="guidAddMultipleProjectsCommandPackageCmdSet" id="SolutionContextAddItem" priority="0x0100">
+        <!-- Solution Explorer -> Right Click Solution -> Add -->
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_SOLUTION_ADD" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <!-- Solution Explorer -> Right Click Solution -> Add -> Multiple Projects... -->
+      <Button guid="guidAddMultipleProjectsCommandPackageCmdSet" id="AddMultipleProjectsSolutionContextCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidAddMultipleProjectsCommandPackageCmdSet" id="SolutionContextAddItem" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Multiple Projects...</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\AddMultipleProjectsCommand.png" usedList="bmpPic1" />
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidAddMultipleProjectsCommandPackage" value="{355a1959-c063-4587-a6df-65dc56b03054}" />
+
+    <GuidSymbol name="guidAddMultipleProjectsCommandPackageCmdSet" value="{52eefd8b-3e82-4d3a-a15f-5ef227b118a9}">
+      <IDSymbol name="SolutionContextAddItem" value="0x1020" />
+      <IDSymbol name="AddMultipleProjectsSolutionContextCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{85147f92-f4ff-4a44-a2dc-af21971eb3c3}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

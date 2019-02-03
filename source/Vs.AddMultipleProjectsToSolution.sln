@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vs.AddMultipleProjectsToSolution", "Vs.AddMultipleProjectsToSolution\Vs.AddMultipleProjectsToSolution.csproj", "{EE6566A1-33E0-463B-B1CA-BA88102E035E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vs.AddMultipleProjectsToSolution.Tests", "Vs.AddMultipleProjectsToSolution.Tests\Vs.AddMultipleProjectsToSolution.Tests.csproj", "{A2F5099E-E791-44FE-930C-8DA386F33913}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46A9FF98-AA29-423C-AEAB-4520998970FF}"
+	ProjectSection(SolutionItems) = preProject
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\CONTRIBUTING.md = ..\CONTRIBUTING.md
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(CrmCodeGeneration) = preSolution
+		UseSSL = False
+		UseIFD = False
+		UseOnline = False
+		UseOffice365 = False
+		ServerName = 
+		ServerPort = 
+		HomeRealm = 
+		Domain = 
+		Organization = DEV-CRM
+		IncludeEntities = account,contact,lead,opportunity,systemuser
+		IncludeNonStandard = False
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE6566A1-33E0-463B-B1CA-BA88102E035E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6566A1-33E0-463B-B1CA-BA88102E035E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6566A1-33E0-463B-B1CA-BA88102E035E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6566A1-33E0-463B-B1CA-BA88102E035E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F5099E-E791-44FE-930C-8DA386F33913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F5099E-E791-44FE-930C-8DA386F33913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F5099E-E791-44FE-930C-8DA386F33913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F5099E-E791-44FE-930C-8DA386F33913}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39E69A80-C2AA-46FF-8512-D7F35A34834A}
+	EndGlobalSection
+EndGlobal
