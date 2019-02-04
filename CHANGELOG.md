@@ -1,6 +1,5 @@
 # Road map
 
-- [ ] Add projects to the solution according to the order based on project references (so the referenced project are added first and only then referncing projects), to not loose those references.
 - [ ] Add exclusion list to skip folders like "obj", "bin" from searching.
 - [ ] Preserve list of extensions used for searching projects between tool executions.
 - [ ] Log performed operations to the Visual Studio output window.

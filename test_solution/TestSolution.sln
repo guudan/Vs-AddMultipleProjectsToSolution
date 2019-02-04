@@ -3,18 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project3", "Projects\SecondFolder\Project3\Project3.csproj", "{D8AD58CF-5BE7-440B-8A0D-972F1653647B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project6DependentOnProject2", "Projects\Project6DependentOnProject2\Project6DependentOnProject2.csproj", "{51B40ED5-3127-4C0E-B059-81F5F5B5A27D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project5FolderConflict", "Projects\Project4FolderConflict\Project5FolderConflict\Project5FolderConflict.csproj", "{92ED75BA-739E-4A3E-80B7-59D2A6F1DB68}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project4FolderConflict", "Projects\Project4FolderConflict\Project4FolderConflict.csproj", "{40FB6204-4BD2-4056-B362-CF5500A1F158}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2", "Projects\FirstFolder\Project2\Project2.csproj", "{6B047F9B-9705-4176-B9D0-8759365EA1F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project1", "Projects\FirstFolder\Project1\Project1.csproj", "{3F9C6E3C-2AD9-4132-A744-9EAB0A269794}"
-EndProject
 Global
 	GlobalSection(CrmCodeGeneration) = preSolution
 		UseSSL = False
@@ -28,36 +16,6 @@ Global
 		Organization = DEV-CRM
 		IncludeEntities = account,contact,lead,opportunity,systemuser
 		IncludeNonStandard = False
-	EndGlobalSection
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D8AD58CF-5BE7-440B-8A0D-972F1653647B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8AD58CF-5BE7-440B-8A0D-972F1653647B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8AD58CF-5BE7-440B-8A0D-972F1653647B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8AD58CF-5BE7-440B-8A0D-972F1653647B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51B40ED5-3127-4C0E-B059-81F5F5B5A27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51B40ED5-3127-4C0E-B059-81F5F5B5A27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51B40ED5-3127-4C0E-B059-81F5F5B5A27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51B40ED5-3127-4C0E-B059-81F5F5B5A27D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92ED75BA-739E-4A3E-80B7-59D2A6F1DB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92ED75BA-739E-4A3E-80B7-59D2A6F1DB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92ED75BA-739E-4A3E-80B7-59D2A6F1DB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92ED75BA-739E-4A3E-80B7-59D2A6F1DB68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40FB6204-4BD2-4056-B362-CF5500A1F158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40FB6204-4BD2-4056-B362-CF5500A1F158}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40FB6204-4BD2-4056-B362-CF5500A1F158}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40FB6204-4BD2-4056-B362-CF5500A1F158}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B047F9B-9705-4176-B9D0-8759365EA1F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B047F9B-9705-4176-B9D0-8759365EA1F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B047F9B-9705-4176-B9D0-8759365EA1F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B047F9B-9705-4176-B9D0-8759365EA1F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F9C6E3C-2AD9-4132-A744-9EAB0A269794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F9C6E3C-2AD9-4132-A744-9EAB0A269794}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F9C6E3C-2AD9-4132-A744-9EAB0A269794}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F9C6E3C-2AD9-4132-A744-9EAB0A269794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
