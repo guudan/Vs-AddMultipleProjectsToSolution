@@ -64,6 +64,14 @@ If you want to add projects without solution folders check configuration in step
 
 ![Add Result With Solution Folders](docs/img/AddResultWithSolutionFolders.png)
 
+## Known Issues
+- [ ] The project references may be lost if project is added in not proper order.
+```
+GIVEN Project1 AND Project2 with reference to Project1
+WHEN Project2 is added to solution first AND Project1 is added to solution second 
+THEN Reference from Project2 to Project1 is lost AND Project2 is not building
+```
+
 ## Contribute
 Check out the [contribution guidelines](CONTRIBUTING.md)
 if you want to contribute to this project.
