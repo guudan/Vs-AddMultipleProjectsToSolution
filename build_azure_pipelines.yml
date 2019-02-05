@@ -14,7 +14,7 @@ steps:
   enabled: true
   inputs:
     checkLatest: true
-- task: Cake
+- task: Cake@0
   displayName: Execute build
   name: CakeBuild
   enabled: true
