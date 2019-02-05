@@ -1,6 +1,6 @@
 
 # Reference https://aka.ms/yaml
-name: Build Add Multiple Projects To Solution
+name: "$(Rev:.r)"
 trigger:
 - master
 

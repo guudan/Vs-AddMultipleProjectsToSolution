@@ -36,6 +36,12 @@ Setup<BuildInfo>(ctx =>
    Information("Running tasks...");
    var buildConfiguration = new BuildInfo();
    buildConfiguration.Configuration = Argument("configuration", "Release");
+
+   Verbose("Getting build number from environment variable BUILD_BUILDNUMBER.");
+   var buildNumberString = EnvironmentVariable("BUILD_BUILDNUMBER");
+   buildConfiguration.BuildNumber = string.IsNullOrWhiteSpace(buildNumberString) ? 0 : int.Parse(buildNumberString);
+   Information($"Build number: {buildConfiguration.BuildNumber}");
+
    return buildConfiguration;
 });
 
@@ -104,7 +110,7 @@ Task("Test")
    .Does<BuildInfo>(config=>{
       var testSettings = new XUnit2Settings();
       testSettings.UseX86 = true;
-      testSettings.ReportName = "TestResults.xml";
+      testSettings.ReportName = "TestResults";
       testSettings.XmlReport = true;
       testSettings.OutputDirectory = config.TestProjectOutputDirPath;
       XUnit2(config.TestProjectDllOutputPath, testSettings);
