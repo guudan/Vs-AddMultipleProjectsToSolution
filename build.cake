@@ -108,6 +108,16 @@ Task("Test")
       testSettings.XmlReport = true;
       testSettings.OutputDirectory = config.TestProjectOutputDirPath;
       XUnit2(config.TestProjectDllOutputPath, testSettings);
+
+      if(TFBuild.IsRunningOnVSTS)
+      {
+         var publishData = new TFBuildPublishTestResultsData();
+         publishData.Configuration = config.Configuration;
+         publishData.TestResultsFiles.Add(new FilePath($"{config.TestProjectOutputDirPath}/TestResults.xml"));
+         publishData.TestRunTitle = "Unit Tests";
+         publishData.TestRunner = TFTestRunnerType.XUnit;
+         TFBuild.Commands.PublishTestResults(publishData);
+      }
    });
 
 Task("CopyFiles")
