@@ -37,8 +37,8 @@ Setup<BuildInfo>(ctx =>
    var buildConfiguration = new BuildInfo();
    buildConfiguration.Configuration = Argument("configuration", "Release");
 
-   Verbose("Getting build number from environment variable BUILD_BUILDNUMBER.");
    var buildNumberString = EnvironmentVariable("BUILD_BUILDNUMBER");
+   Verbose($"Parsing build number \"{buildNumberString}\" from environment variable BUILD_BUILDNUMBER.");
    buildConfiguration.BuildNumber = string.IsNullOrWhiteSpace(buildNumberString) ? 0 : int.Parse(buildNumberString);
    Information($"Build number: {buildConfiguration.BuildNumber}");
 

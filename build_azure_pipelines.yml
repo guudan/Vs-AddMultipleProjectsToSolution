@@ -1,6 +1,6 @@
 
 # Reference https://aka.ms/yaml
-name: "$(Rev:.r)"
+name: $(Rev:.r)
 trigger:
 - master
 
@@ -22,5 +22,5 @@ steps:
   inputs:
     script: build.cake
     target: Default
-    verbosity: Normal
+    verbosity: Verbose
     useBuildAgentNuGetExe: true
