@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Cake Build Script",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/Cake.CoreCLR/Cake.dll",
+            "args":[
+                "${workspaceFolder}/build.cake",
+                "--debug",
+                "--verbosity=diagnostic"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": true,
+            "externalConsole": false
+        }
+    ]
+}

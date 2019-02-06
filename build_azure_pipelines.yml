@@ -1,0 +1,26 @@
+
+# Reference https://aka.ms/yaml
+name: $(Rev:r)
+trigger:
+- master
+
+pool:
+  vmImage: vs2017-win2016
+
+steps:
+- task: NuGetToolInstaller@0
+  displayName: Get NuGet
+  name: GetNuGet
+  enabled: true
+  inputs:
+    checkLatest: true
+- task: Cake@0
+  displayName: Execute build
+  name: CakeBuild
+  enabled: true
+  condition: succeeded()
+  inputs:
+    script: build.cake
+    target: Default
+    verbosity: Verbose
+    useBuildAgentNuGetExe: true
