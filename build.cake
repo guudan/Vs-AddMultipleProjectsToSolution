@@ -135,11 +135,19 @@ Task("CopyFiles")
       CopyFileToDirectory(config.VsixOutputPath, BuildConsts.BuildOutputDir);
    });
 
+Task("PublishBuildArtifacts")
+   .WithCriteria(TFBuild.IsRunningOnVSTS)
+   .IsDependentOn("CopyFiles")
+   .Does<BuildInfo>(config=>{
+      TFBuild.Commands.UploadArtifactDirectory(BuildConsts.BuildOutputDir, "BuildResult");
+   });
+
 Task("Default")
    .IsDependentOn("Build")
    .IsDependentOn("Test")
    .IsDependentOn("PublishTestResults")
    .IsDependentOn("CopyFiles")
+   .IsDependentOn("PublishBuildArtifacts")
    .Does(() => {
    });
 
