@@ -1,8 +1,14 @@
 #tool "nuget:?package=xunit.runner.console&version=2.4.1"
+#load "deployment_scripts/deploy_common.cake"
 
 var target = Argument("target", "Default");
 
-public class BuildConsts
+public static class EnvironmentVariableNames
+{
+   public const string BuildNumber = "BUILD_BUILDNUMBER";
+}
+
+public static class BuildConsts
 {
    public const string RootDir = "./source";
    public static readonly string SolutionFile = $"{RootDir}/Vs.AddMultipleProjectsToSolution.sln";
@@ -15,6 +21,7 @@ public class BuildConsts
    public static string VsTestDllFileName = $"{VsTestProjectName}.dll";
 
    public const string BuildOutputDir = "bin";
+   public const string DeploymentScriptPath = "deployment_scripts/deploy.cake";
 }
 
 public class BuildInfo
@@ -31,14 +38,40 @@ public class BuildInfo
       $"{TestProjectOutputDirPath}/{BuildConsts.VsTestDllFileName}";
 }
 
+
+public static void ExecuteDeploymentScript(this ICakeContext context)
+{
+   context.Information("Calling deployment script");
+   var args = new CakeSettings();
+   
+   var extensionDir = new DirectoryPath($"{BuildConsts.BuildOutputDir}/Extension");
+   args.Arguments[DeploymentArgs.DeploymentPackagePath] = context.MakeAbsolute(extensionDir).FullPath;
+
+   ReadArgumentsIntoDictionary(context, args.Arguments, DeploymentArgs.ArgumentList);
+   
+   context.CakeExecuteScript(BuildConsts.DeploymentScriptPath, args);
+}
+
+public static void ReadArgumentsIntoDictionary(this ICakeContext context, IDictionary<string, string> arguments, string[] argumentNames)
+{
+   foreach(var arg in argumentNames)
+   {
+      if(context.HasArgument(arg))
+      {
+         var value = context.Argument<string>(arg);
+         arguments.Add(arg,value);
+      }
+   }
+}
+
 Setup<BuildInfo>(ctx =>
 {
    Information("Running tasks...");
    var buildConfiguration = new BuildInfo();
    buildConfiguration.Configuration = Argument("configuration", "Release");
 
-   var buildNumberString = EnvironmentVariable("BUILD_BUILDNUMBER");
-   Verbose($"Parsing build number \"{buildNumberString}\" from environment variable BUILD_BUILDNUMBER.");
+   var buildNumberString = EnvironmentVariable(EnvironmentVariableNames.BuildNumber);
+   Verbose($"Parsing build number \"{buildNumberString}\" from environment variable {EnvironmentVariableNames.BuildNumber}.");
    buildConfiguration.BuildNumber = string.IsNullOrWhiteSpace(buildNumberString) ? 0 : int.Parse(buildNumberString);
    Information($"Build number: {buildConfiguration.BuildNumber}");
 
@@ -128,12 +161,24 @@ Task("PublishTestResults")
       TFBuild.Commands.PublishTestResults(publishData);
    });
 
-Task("CopyFiles")
+Task("CopyBuildOutput")
    .IsDependentOn("Build")
    .Does<BuildInfo>(config=>{
-      CreateDirectory(BuildConsts.BuildOutputDir);
-      CopyFileToDirectory(config.VsixOutputPath, BuildConsts.BuildOutputDir);
+      var extensionDir = $"{BuildConsts.BuildOutputDir}/Extension";
+      CreateDirectory(extensionDir);
+      CopyFileToDirectory(config.VsixOutputPath, extensionDir);
+      CopyFiles(new []{"README.md", "CHANGELOG.md", "CHANGELOG.md", "LICENSE" }, extensionDir);
+      CopyDirectory("docs", $"{extensionDir}/docs");
    });
+
+Task("CopyDeploymentScripts")
+   .Does<BuildInfo>(config =>{
+      CopyDirectory("deployment_scripts", BuildConsts.BuildOutputDir);
+   });
+
+Task("CopyFiles")
+   .IsDependentOn("CopyBuildOutput")
+   .IsDependentOn("CopyDeploymentScripts");
 
 Task("PublishBuildArtifacts")
    .WithCriteria(TFBuild.IsRunningOnVSTS)
@@ -141,6 +186,24 @@ Task("PublishBuildArtifacts")
    .Does<BuildInfo>(config=>{
       TFBuild.Commands.UploadArtifactDirectory(BuildConsts.BuildOutputDir, "BuildResult");
    });
+
+Task("PublishToVsixGallery")
+    //.IsDependentOn("CopyFiles")
+    .Does<BuildInfo>(ctx => {
+        Context.ExecuteDeploymentScript();
+    });
+
+Task("PublishToGithub")
+    //.IsDependentOn("CopyFiles")
+    .Does<BuildInfo>(ctx =>{
+        Context.ExecuteDeploymentScript();
+    });
+
+Task("PublishToVsMarketplace")
+    //.IsDependentOn("CopyFiles")
+    .Does<BuildInfo>(ctx =>{
+        Context.ExecuteDeploymentScript();
+    });
 
 Task("Default")
    .IsDependentOn("Build")
