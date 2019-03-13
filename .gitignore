@@ -342,3 +342,4 @@ healthchecksdb
 
 #Ignore Cake tools directory
 /tools
+/deployment_scripts/tools
