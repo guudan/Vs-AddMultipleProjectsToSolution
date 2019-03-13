@@ -11,7 +11,7 @@ namespace Vs.AddMultipleProjectsToSolution
         public const string Name = "Add Multiple Projects To Solution";
         public const string Description = @"Visual Studio extension that allows adding multiple existing projects into the solution. Optionally creates the solution folder structure reflecting to the physical hierarchy on disk.";
         public const string Language = "en-US";
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.0";
         public const string Author = "Maciej Gudanowicz";
         public const string Tags = "add, existing, multiple, projects, solution ";
     }
