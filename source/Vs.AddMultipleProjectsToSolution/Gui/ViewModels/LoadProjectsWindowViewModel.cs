@@ -19,7 +19,8 @@ namespace Vs.AddMultipleProjectsToSolution.Gui.ViewModels
             "*.fsproj",
             "*.vbproj",
             "*.shproj",
-            "*.sqlproj"
+            "*.sqlproj",
+            "*.vcxproj"
         };
 
         private readonly IFileEnumerationHelper _FileEnumerationHelper;
