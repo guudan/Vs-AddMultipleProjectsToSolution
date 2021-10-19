@@ -16,8 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Vs.AddMultipleProjectsToSolution.Shared", "Vs.AddMultipleProjectsToSolution.Shared\Vs.AddMultipleProjectsToSolution.Shared.shproj", "{73087412-CD4C-4528-9A78-C2EDF3E8E2F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vs.AddMultipleProjectsToSolution.Vs2022", "Vs.AddMultipleProjectsToSolution.Vs2022\Vs.AddMultipleProjectsToSolution.Vs2022.csproj", "{31FF3E78-A579-4662-BC36-F8FA8A8C5AC2}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Vs.AddMultipleProjectsToSolution.Shared\Vs.AddMultipleProjectsToSolution.Shared.projitems*{31ff3e78-a579-4662-bc36-f8fa8a8c5ac2}*SharedItemsImports = 4
 		Vs.AddMultipleProjectsToSolution.Shared\Vs.AddMultipleProjectsToSolution.Shared.projitems*{73087412-cd4c-4528-9a78-c2edf3e8e2f4}*SharedItemsImports = 13
 		Vs.AddMultipleProjectsToSolution.Shared\Vs.AddMultipleProjectsToSolution.Shared.projitems*{ee6566a1-33e0-463b-b1ca-ba88102e035e}*SharedItemsImports = 4
 	EndGlobalSection
@@ -34,6 +37,10 @@ Global
 		{A2F5099E-E791-44FE-930C-8DA386F33913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2F5099E-E791-44FE-930C-8DA386F33913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2F5099E-E791-44FE-930C-8DA386F33913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FF3E78-A579-4662-BC36-F8FA8A8C5AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FF3E78-A579-4662-BC36-F8FA8A8C5AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FF3E78-A579-4662-BC36-F8FA8A8C5AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FF3E78-A579-4662-BC36-F8FA8A8C5AC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
