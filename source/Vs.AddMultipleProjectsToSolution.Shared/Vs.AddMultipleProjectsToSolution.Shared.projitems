@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>73087412-cd4c-4528-9a78-c2edf3e8e2f4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Vs.AddMultipleProjectsToSolution</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalSuppressions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\AddMultipleProjectsProgressControlControl.xaml.cs">
+      <DependentUpon>AddMultipleProjectsProgressControlControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\AddMultipleProjectsWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\AddMultipleProjectsConfigurationControl.xaml.cs">
+      <DependentUpon>AddMultipleProjectsConfigurationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddMultipleProjectsCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\LoadProjectsProgressControl.xaml.cs">
+      <DependentUpon>LoadProjectsProgressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\LoadProjectsWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\LoadProjectsWindowControl.xaml.cs">
+      <DependentUpon>LoadProjectsWindowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\IWindowService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\Utilities\BooleanToFontWeightConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\AddMultipleProjectsConfigurationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\AddMultipleProjectsProgressViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\FsItemBuildSolutionItemHierarchyVisitor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\FsItemChangeCreateSolutionFolderVisitor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\FsDirectoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\FsItemCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\IFsItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\IFsItemViewModelVisitor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\IMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\ISolutionItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\LoadProjectsWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\Utilities\IObservableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\Mapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\Utilities\ObservableProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\FsProjectDirectoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\ProcessingContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\SolutionDirectoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\SolutionItemCreateStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\SolutionItemHierarchy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\SolutionItemsCount.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\ViewModels\SolutionProjectViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gui\WindowService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\Annotations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\Counter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\DirectoryReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\FileEnumerationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\IDirectoryReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\IFileEnumerationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\INVsProject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\INVsProjectHierarchy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\INVsSolution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\INVsSolutionFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\NVsCommmonHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\VsConsts\ProjectKinds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\NVsProject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\NVsSolution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\NVsSolutionFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VsPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Gui\AddMultipleProjectsProgressControlControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Gui\LoadProjectsProgressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Gui\LoadProjectsWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Gui\Assets\VsControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\ExtensionIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\ExtensionPreview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Gui\AddMultipleProjectsConfigurationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
