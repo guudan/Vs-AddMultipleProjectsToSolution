@@ -18,6 +18,9 @@ download in the
 These are the changes to each version that has been released
 on the official Visual Studio extension gallery.
 
+## 2.0
+- [x] Migrate to Visual Studio 2022.
+
 ## 1.2
 - [x] Added "vcxproj" to the list of searched projects.
 

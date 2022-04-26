@@ -1,12 +1,12 @@
-# Add Multiple Projects To Solution 
+# Add Multiple Projects To Solution V2
 
 [![Build Status](https://dev.azure.com/guudan/GithubBuildAndRelease/_apis/build/status/Build%20Vs.AddMultipleProjectsToSolution?branchName=master)](https://dev.azure.com/guudan/GithubBuildAndRelease/_build/latest?definitionId=3&branchName=master)
 
 <!-- Update the VS Gallery link after you upload the VSIX-->
 
-Download this extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MaciejGudanowicz.AddMultipleProjectsToSolution).
+Download this extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MaciejGudanowicz.AddMultipleProjectsToSolutionV2).
 <!--
-or get the [CI build](http://vsixgallery.com/extension/2ed01419-2b11-4128-a2ca-0adfa0fc7498/).
+or get the [CI build](http://vsixgallery.com/extension/E298F226-867E-47D5-B1EE-D9D1377E03A5/).
 -->
 
 ---------------------------------------
@@ -67,12 +67,6 @@ If you want to add projects without solution folders check configuration in step
 ## Contribute
 Check out the [contribution guidelines](CONTRIBUTING.md)
 if you want to contribute to this project.
-
-For cloning and building this project yourself, make sure
-to install the
-[Extensibility Tools 2015](https://visualstudiogallery.msdn.microsoft.com/ab39a092-1343-46e2-b0f1-6a3f91155aa6)
-extension for Visual Studio which enables some features
-used by this project.
 
 ## License
 [MIT License](LICENSE)

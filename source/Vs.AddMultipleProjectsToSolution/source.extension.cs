@@ -7,11 +7,11 @@ namespace Vs.AddMultipleProjectsToSolution
 {
     static class Vsix
     {
-        public const string Id = "2ed01419-2b11-4128-a2ca-0adfa0fc7498";
-        public const string Name = "Add Multiple Projects To Solution";
+        public const string Id = "E298F226-867E-47D5-B1EE-D9D1377E03A5";
+        public const string Name = "Add Multiple Projects To Solution V2";
         public const string Description = @"Visual Studio extension that allows adding multiple existing projects into the solution. Optionally creates the solution folder structure reflecting to the physical hierarchy on disk.";
         public const string Language = "en-US";
-        public const string Version = "1.2.0";
+        public const string Version = "2.0.0";
         public const string Author = "Maciej Gudanowicz";
         public const string Tags = "add, existing, multiple, projects, solution ";
     }

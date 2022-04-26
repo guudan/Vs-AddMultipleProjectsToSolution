@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="110" xml:space="preserve">
-    <value>Add Multiple Projects To Solution</value>
+    <value>Add Multiple Projects To Solution V2</value>
   </data>
   <data name="112" xml:space="preserve">
     <value>Visual Studio extension that allows adding multiple existing projects into the solution. Optionally creates the solution folder structure reflecting to the physical hierarchy on disk.</value>
